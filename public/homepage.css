@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
+
+/* Footer styles */
+footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Align footer to the bottom */
+}
+
+/* Container class for centered content */
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header styles */
+header {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+}
+
+header .logo {
+    float: left;
+    width: 90px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+header nav {
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #000000;
+}
+
+header .auth-links {
+    float: right;
+    margin-top: 15px;
+}
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.auth-links .profile-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header .auth-links a {
+    color: #000000;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Hero section styles */
+.hero {
+    background: url('../img/hero-bg.jpg') no-repeat center center/cover;
+    color: #003366;
+    padding: 10px;
+    text-align: justify;
+    text-align: start;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.hero p {
+    margin: 20px 10px;
+    font-size: 1.2em;
+}
+
+/* Features section styles */
+.features {
+    padding: 45px 0;
+    text-align: left; /* Align features section to the left */
+    background: #e6f2ff;
+    margin-top: 5px;
+}
+
+.features .feature {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding: 10px 0;
+}
+
+.features .feature h2 {
+    font-size: 2em;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.features .feature p {
+    font-size: 1.1em;
+    text-align: 5px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.topic {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: black;
+}
+
+.topic:hover {
+    background-color: #eaeaea;
+}

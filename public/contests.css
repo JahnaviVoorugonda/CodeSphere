@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
+
+/* Footer styles */
+footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Align footer to the bottom */
+}
+
+/* Container class for centered content */
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header styles */
+header {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+}
+
+header .logo {
+    float: left;
+    width: 90px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+header nav {
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #000000;
+}
+
+header .auth-links {
+    float: right;
+    margin-top: 15px;
+}
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.auth-links .profile-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header .auth-links a {
+    color: #000000;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.content {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container2 {
+    width: 100%;
+    height: 600px; /* Set the desired height */
+    margin: auto;
+    overflow: hidden;
+    background-color: #e6f2ff;
+}
+
+.contest-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contest-card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    width: 250px;
+}
+
+.contest-card__title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contest-card__time {
+    font-size: 16px;
+    color: #dc3333;
+    margin-bottom: 10px;
+}
+
+.contest-card__duration {
+    font-size: 14px;
+    color: #000000;
+}
+
+.featured-contests {
+    margin-top: 50px;
+    text-align: center;
+    color: #003366;
+}
+
+.featured-contests ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.featured-contests li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.featured-contests a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+#contest-info {
+    display:inline-flexbox;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: 30px;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    width: 300px;
+    text-align: left;
+    font-size: medium;
+    color: #003366; 
+}

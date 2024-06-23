@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="CodeSphereLogo_processed.png" alt="CodeSphere Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="Practice.html">Practice</a></li>
+                    <li><a href="contests.html">Contests</a></li>
+                    <li><a href="#">Open IDE</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+            </nav>
+            <div class="auth-links">
+                <a href="profile.html">Profile</a>
+                <img src="profile.png" alt="Profile" class="profile-logo">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="./default_avatar.jpg" alt="Profile" class="pro-pic">
+                    <h2 class="username" id="username"></h2>
+                    <p class="rank" id="rank"></p>
+                    <button class="editProfile">Edit Profile</button>
+                    <div class="details">
+                        <div class="detail-item">
+                            <img src="./school.png" alt="Campus" class="detail-icon">
+                            <p id="campus">Campus: </p>
+                        </div>
+                        <div class="detail-item">
+                            <img src="./hierarchical-structure.png" alt="Department" class="detail-icon">
+                            <p id="department">Department: </p>
+                        </div>
+                        <div class="detail-item">
+                            <img src="./file.png" alt="Batch" class="detail-icon">
+                            <p id="batch">Batch: </p>
+                        </div>
+                    </div>
+                </div>            
+                <div class="personalInfo">
+                    <h2>Personal Information</h2>
+                    <div class="info-row">
+                        <div class="info-item">
+                            <label for="name">Name:</label>
+                            <span id="name"></span>
+                        </div>
+                        <div class="info-item">
+                            <label for="registration-number">Registration Number:</label>
+                            <span id="registration-number"></span>
+                        </div>
+                        <div class="info-item">
+                            <label for="email">Email:</label>
+                            <span id="email"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="content">
+                <div id="sections-container-tabs" class="tabs-container">
+                    <button class="tab-button active" id="info-tab-1">Academic Information</button>
+                    <button class="tab-button" id="info-tab-2">Additional Information</button>
+                    <button class="tab-button" id="info-tab-3">Resume</button>
+                    <button class="tab-button" id="info-tab-4">Rewards</button>
+                    <button class="tab-button" id="info-tab-5">Account Settings</button>
+                </div>
+                <div class="tab-content active" id="tab-1">
+                    <div class="contestRating">
+                        <div class="rating">
+                            <h2>Contest Rating</h2>
+                            <p>Current Rating: <span id="current-rating"></span></p>
+                            <div class="rating-bar">
+                                <div class="current-rating" id="rating-bar"></div>
+                            </div>
+                            <p>Contests Participated: <span id="contests-participated"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="problemsSolved">
+                        <h2>Problems Solved</h2>
+                        <p>Total Problems Solved: <span id="problems-solved"></span></p>
+                    </div>
+                    
+                    <div class="badgesEarned">
+                        <h2>Badges Earned</h2>
+                        <ul id="badges-earned">
+                            <li><img src="gold-badge.png" alt="Gold Badge" class="badge-icon"> Gold Badge</li>
+                            <li><img src="silver-badge.png" alt="Silver Badge" class="badge-icon"> Silver Badge</li>
+                            <li><img src="bronze-badge.png" alt="Bronze Badge" class="badge-icon"> Bronze Badge</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab-2">
+                    <h2>Additional Information</h2>
+                    <p>Here you can add additional information.</p>
+                </div>
+                <div class="tab-content" id="tab-3">
+                    <h2>Resume</h2>
+                    <p>Here you can upload or view your resume.</p>
+                </div>
+                <div class="tab-content" id="tab-4">
+                    <h2>Rewards</h2>
+                    <p>Here you can view your rewards and achievements.</p>
+                </div>
+                <div class="tab-content" id="tab-5">
+                    <h2>Account Settings</h2>
+                    <p>Here you can update your account settings.</p>
+                </div>
+            </div>
+        </div>                   
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CodeSphere. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="profile.js"></script>
+</body>
+</html>

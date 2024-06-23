@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
+
+/* Footer styles */
+footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Align footer to the bottom */
+}
+
+/* Container class for centered content */
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header styles */
+header {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+}
+
+header .logo {
+    float: left;
+    width: 90px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+header nav {
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #000000;
+}
+
+header .auth-links {
+    float: right;
+    margin-top: 15px;
+}
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.auth-links .profile-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header .auth-links a {
+    color: #000000;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+main{
+    background: #e6f2ff;
+    padding: 110px;
+}
+
+/* Problem table styles */
+.table-container {
+    align-content: first baseline;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.problems-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.problems-table th,
+.problems-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.problems-table th {
+    background-color: #f2f2f2;
+    color: #000000;
+}
+
+.problems-table tr {
+    background-color:  #fcfcfc;
+}
+
+.problems-table tr:hover {
+    background-color: #b3b8bd;
+}
+
+.problems-table a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.problems-table a:hover {
+    text-decoration: underline;
+}
+
+/* Pagination styles */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    color: #003366;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #f2f2f2;
+}
+
+.pagination span {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.pagination .active {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+.pagination .active:hover {
+    background-color: #003366;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSphere</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<style>
+    .man-con{
+        display: flex;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .man-con2 {
+        display: flex;
+    }
+    .man-con2 a{
+        text-align: center;
+        margin-right: 50px;
+        margin-left: 50px;
+        color: #402E7A;
+        vertical-align: text-bottom;
+        position: relative;
+        padding-bottom: 5px;
+        text-decoration: none;
+    }
+    .man-con2 a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #4C3BCF;
+        transition: width 0.3s;
+    }
+    .man-con2 a.active::after {
+        width: 100%;
+    }
+    .man-con2 a.active {
+        font-weight: bold;
+    }
+    .searchBar{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    </style>
+<body>
+    <header>
+        <div class="container">
+            <img src="CodeSphereLogo_processed.png" alt="CodeSphere Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="Practice.html">Practice</a></li>
+                    <li><a href="contests.html">Contests</a></li>
+                    <li><a href="#">Open IDE</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+            </nav>
+            <div class="auth-links">
+                <a href="profile.html">Profile</a>
+                <img src="profile.png" alt="Profile" class="profile-logo">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="manage">
+            <div class="man-con" aria-orientation="horizontal" >
+                <div class="man-con2">
+                    <a href="#" id="make-contest">Make Contest</a>
+                    <a href="#" id="make-challenge">Make Challenge</a>
+                </div>
+                <div class="searchBar">
+                    <input type="search" placeholder="Start typing...">
+                </div>
+            </div>
+            <hr>
+            <div id="content">
+                <!-- Content will be updated here -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CodeSphere. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.man-con2 a');
+            const contentDiv = document.getElementById('content');
+
+            const contentMap = {
+                'make-contest': '<h2>Make Contest</h2><p>Content for making a contest goes here.</p>',
+                'make-challenge': '<h2>Make Challenge</h2><p>Content for making a challenge goes here.</p>',
+            };
+
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    links.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    const contentKey = this.id;
+                    contentDiv.innerHTML = contentMap[contentKey] || '<p>Content not found.</p>';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

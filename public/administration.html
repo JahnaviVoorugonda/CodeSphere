@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="homepage.css">
 </head>
 <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
     .man-con{
         display: flex;
         margin-left: 50px;
@@ -96,8 +104,8 @@
             const contentDiv = document.getElementById('content');
 
             const contentMap = {
-                'make-contest': '<h2>Make Contest</h2><p>Content for making a contest goes here.</p>',
-                'make-challenge': '<h2>Make Challenge</h2><p>Content for making a challenge goes here.</p>',
+                'make-contest': 'makeContest.html',
+                'make-challenge': 'makeChallenge.html',
             };
 
             links.forEach(link => {
@@ -105,8 +113,25 @@
                     event.preventDefault();
                     links.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
+
                     const contentKey = this.id;
-                    contentDiv.innerHTML = contentMap[contentKey] || '<p>Content not found.</p>';
+                    const url = contentMap[contentKey];
+
+                    // Fetch the HTML content from the external file
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(html => {
+                            contentDiv.innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error('Error loading content:', error);
+                            contentDiv.innerHTML = '<p>Content not found.</p>';
+                        });
                 });
             });
         });

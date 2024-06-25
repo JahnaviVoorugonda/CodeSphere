@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Contest</title>
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="./createcontest.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        .horizontal-group {
+            display: flex; 
+            align-items: center;
+            margin-right:70px; 
+        }
+        .horizontal-group p {
+            margin: 0 10px; 
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group label {
+            margin-left: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
     <header>
@@ -30,22 +49,168 @@
         <div class="initial-text">
             <h2 class="heading">Create Contest</h2>
             <p class="para">Get started by providing the initial details needed to create a contest.</p>
-            <div class="formgroup">
-                <label for="name" class="coName">Contest Name</label>
-                <div class="profile-input">
-                    <input id="name" type="text" class="span12">
-                    <small class="error name span12"></small>
+            <form id="contestForm">
+                <div class="formgroup">
+                    <label for="name" class="coName">Contest Name</label>
+                    <div class="profile-input">
+                        <input id="name" type="text" class="span12">
+                        <small class="error name span12"></small>
+                    </div>
                 </div>
-            </div>
-            <div class="formgroup">
-                <label for="startDate" class="coName">Start Time</label>
-                <div class="profile-input horizontal-group">
-                    <input data-analytics="createsd" id="startDate" type="text" class="date">
-                    <p>at</p>
-                    <input id="starttime" type="text" class="time">
+                <div class="formgroup">
+                    <label for="startDate" class="coName">Start Time</label>
+                    <div class="profile-input horizontal-group">
+                        <input id="startDate" type="text" class="date">
+                        <p>at</p>
+                        <input id="starttime" type="text" class="time">
+                        <small class="error start span12"></small>
+                    </div>
                 </div>
-            </div>
+                <div class="formgroup">
+                    <label for="endDate" class="coName">End Time</label>
+                    <div class="profile-input horizontal-group">
+                        <input id="endDate" type="text" class="date">
+                        <p>at</p>
+                        <input id="endtime" type="text" class="time">
+                        <small class="error end span12"></small>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <label> </label>
+                    <div class="checkbox-group">
+                        <input id="noEndTime" type="checkbox">
+                        <label for="noEndTime">This contest has no end time</label>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <label for="orgType" class="coName">Organization Type</label>
+                    <div class="profile-input">
+                        <input id="orgType" type="text" class="span12">
+                        <small class="error orgType span12"></small>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <label for="orgName" class="coName">Organization Name</label>
+                    <div class="profile-input">
+                        <input id="orgName" type="text" class="span12">
+                        <small class="error orgName span12"></small>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
+    <div class="bottom-bar-wrapper">
+        <div class="bottom-bar">
+            <div class="bottom">
+                <button class="button">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CodeSphere. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const endDateInput = document.getElementById('endDate');
+            const endTimeInput = document.getElementById('endtime');
+            const noEndTimeCheckbox = document.getElementById('noEndTime');
+
+            flatpickr("#startDate", {
+                enableTime: false,
+                dateFormat: "Y-m-d",
+            });
+
+            flatpickr("#starttime", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                time_24hr: true,
+            });
+
+            flatpickr("#endDate", {
+                enableTime: false,
+                dateFormat: "Y-m-d",
+            });
+
+            flatpickr("#endtime", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                time_24hr: true,
+            });
+            noEndTimeCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    endDateInput.value = ''; 
+                    endTimeInput.value = ''; 
+                    endDateInput.disabled = true; 
+                    endTimeInput.disabled = true; 
+                } else {
+                    endDateInput.disabled = false;
+                    endTimeInput.disabled = false; 
+                }
+            });
+            const form = document.getElementById('contestForm');
+            form.addEventListener('submit', function (event) {
+                let isValid = true;
+                const nameInput = document.getElementById('name');
+                if (nameInput.value.trim() === '') {
+                    isValid = false;
+                    showError(nameInput, 'Contest name is required.');
+                } else {
+                    clearError(nameInput);
+                }
+                const startDateInput = document.getElementById('startDate');
+                const startTimeInput = document.getElementById('starttime');
+                if (startDateInput.value.trim() === '' || startTimeInput.value.trim() === '') {
+                    isValid = false;
+                    showError(startDateInput, 'Start time is required.');
+                } else {
+                    clearError(startDateInput);
+                }
+                if (!noEndTimeCheckbox.checked) {
+                    const endDateInput = document.getElementById('endDate');
+                    const endTimeInput = document.getElementById('endtime');
+                    if (endDateInput.value.trim() === '' || endTimeInput.value.trim() === '') {
+                        isValid = false;
+                        showError(endDateInput, 'End time is required.');
+                    } else {
+                        clearError(endDateInput);
+                    }
+                }
+                const orgTypeInput = document.getElementById('orgType');
+                if (orgTypeInput.value.trim() === '') {
+                    isValid = false;
+                    showError(orgTypeInput, 'Organization type is required.');
+                } else {
+                    clearError(orgTypeInput);
+                }
+                const orgNameInput = document.getElementById('orgName');
+                if (orgNameInput.value.trim() === '') {
+                    isValid = false;
+                    showError(orgNameInput, 'Organization name is required.');
+                } else {
+                    clearError(orgNameInput);
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            function showError(input, message) {
+                const errorElement = input.nextElementSibling;
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+
+            function clearError(input) {
+                const errorElement = input.nextElementSibling;
+                errorElement.textContent = '';
+                errorElement.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

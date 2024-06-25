@@ -5,63 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeSphere</title>
     <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="./createChallenge.css">
 </head>
-<style>
-    body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
-}
-    .initial-text{
-        margin-left: 70px;
-        margin-top: 30px;
-    }
-    .heading{
-        padding: 30px 0px 10px;
-    }
-    .para{
-        margin: 10px 0px;
-    }
-    .chName{
-        float: left;
-        width: 25%;
-        box-sizing: border-box;
-    }
-
-    .block.span12.profile-input{
-        box-sizing: border-box;
-        float: left;
-        margin-left: 0;
-        padding-left: 7.5px;
-        padding-right: 7.5px;
-    }
-    .span12, .span8{
-        float: left;
-        box-sizing: border-box;
-        padding-left: 7.5px;
-        padding-right: 7.5px;
-    }
-    .formgroup{
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    vertical-align: baseline;
-    
-    }
-    /* .descrip{
-        color: #39424e;
-        font-weight: 500;
-        line-height: 1.4em;
-    } */
-</style>
-
-
 <body>
     <header>
         <div class="container">
@@ -90,14 +35,14 @@
             <p class="para">Get started by providing the initial details needed to create a challenge.</p>
             <div class="formgroup">
                 <label for="name" class="chName">Challenge Name</label>
-                <div class="block span12 profile-input">
+                <div class="profile-input">
                     <input id="name" type="text" class="span12">
                     <small class="error name span12"></small>
                 </div>
             </div>
             <div class="formgroup">
                 <label for="description" class="chName">Description</label>
-                <div class="block span12 profile-input">
+                <div class="profile-input">
                     <textarea rows="2" id="preview" placeholder="Write a short summary about the challenge"></textarea>
                     <!-- <small class="descrip">Characters left : 140</small> -->
                      <small class="error description1 span8"></small>
@@ -105,10 +50,24 @@
             </div>
             <div class="formgroup">
                 <label for="problem_statement" class="chName">Problem Statement</label>
-                <div class="block span12 profile-input">
+                <div class="profile-input">
                     <div id="problem_statement-container">
                         <div class="generic-input-view">
-                            
+                            <div class="mkd-container">
+                                <div class="mkd-button-bar">
+                                    <ul class="row">
+                                        <li class="span1" title="Strong">
+                                            <span id="bold"></span>
+                                        </li>
+                                        <li class="span1" title="Emphasis">
+                                            <span id="italics"></span>
+                                        </li>
+                                        <li class="span1 custom" title="numList">
+                                            <span id="numberedList"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- <small class="descrip">Characters left : 140</small> -->

@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
+    .initial-text{
+        margin-left: 70px;
+        margin-top: 30px;
+    }
+    .heading{
+        padding: 30px 0px 10px;
+    }
+    .para{
+        margin: 10px 0px;
+    }
+    .chName{
+        float: left;
+        
+        padding: 0px 107.5px;
+        width: 50%;
+        box-sizing: border-box;
+        margin-top: 50px;
+    }
+
+    .profile-input{
+        box-sizing: border-box;
+        float: left;
+        margin-left: 0;
+        margin-top: 30px;
+        padding: 0px -75px;
+        padding-left: -7.5px;
+        padding-right: -7.5px;
+        
+    }
+    .span12, .span8{
+        float: left;
+        box-sizing: border-box;
+        padding-left: 7.5px;
+        padding-right: 7.5px;  
+        width: 100%; 
+        height: 50px;
+        margin-left: -275px;
+        margin-right: 275px;
+        border-radius: 10px;
+        border-color: darkgray;
+    }
+    div{
+        display: block;
+        unicode-bidi: isolate;
+    }
+    .formgroup{
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+    }
+    #preview{
+        float: left;
+        box-sizing: border-box;
+        padding-left: 7.5px;
+        padding-right: 7.5px;  
+        width: 100%; 
+        height: 75px;
+        margin-left: -275px;
+        margin-right: 475px;
+        border-radius: 10px;
+        border-color: darkgray;
+    }
+    .span1{
+        width: 6.25%;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 0;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+    }
+    span{
+        border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    }
+    .mkd-container .mkd-button-bar ul li {
+    list-style: none;
+    padding-top: 8px;
+}
+li {
+    text-align: -webkit-match-parent;
+}
+.mkd-container .mkd-button-bar ul li #bold {
+    background-position: 9px -27px;
+}
+.mkd-container .mkd-button-bar ul li span {
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    background: url(https://hrcdn.net/hackerrank/assets/forum-post/markdown-buttons-2-5d13719….png) no-repeat;
+    cursor: pointer;
+}
+.mkd-container .mkd-button-bar ul li #italics {
+    background-position: -31px -27px;
+}
+.mkd-container .mkd-button-bar ul li #numberedList {
+    background-position: -166px -28px;
+}
+.mkd-container .mkd-button-bar ul li.custom {
+    width: 7.25%;
+}
+    /* .descrip{
+        color: #39424e;
+        font-weight: 500;
+        line-height: 1.4em;
+    } */

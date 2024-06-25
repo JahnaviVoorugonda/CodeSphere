@@ -62,7 +62,7 @@ body {
     margin-right: 50px;
     
     }
-    #preview{
+    #description{
         float: left;
         box-sizing: border-box;
         padding-left: 7.5px;
@@ -74,7 +74,7 @@ body {
         border-radius: 10px;
         border-color: darkgray;
     }
-    .span1{
+    .span1, .span2{
         width: 6.25%;
         box-sizing: border-box;
         float: left;
@@ -91,7 +91,7 @@ body {
     padding: 0;
     vertical-align: baseline;
     }
-    .mkd-container .mkd-button-bar ul li {
+    /* .mkd-container .mkd-button-bar ul li {
     list-style: none;
     padding-top: 8px;
 }
@@ -100,6 +100,8 @@ li {
 }
 .mkd-container .mkd-button-bar ul li #bold {
     background-position: 9px -27px;
+    width: 10px;
+    height: 10px;
 }
 .mkd-container .mkd-button-bar ul li span {
     width: 30px;
@@ -117,6 +119,95 @@ li {
 .mkd-container .mkd-button-bar ul li.custom {
     width: 7.25%;
 }
+.mkd-container .mkd-button-bar ul li #bulletedList {
+    background-position: -116px -27px;
+}
+.mkd-container .mkd-button-bar ul li #image {
+    background-position: -216px -27px;
+}
+
+.mkd-container .mkd-button-bar ul li #link1 {
+    background-position: -262px -27px;
+}
+.mkd-container .mkd-button-bar ul li #code {
+    background-position: -310px -27px;
+}
+.pull-right {
+    float: right;
+}
+.btn{
+    box-sizing: border-box;
+    padding: 5px 9px;
+    font-size: 13px;
+    line-height: 16px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important;
+    vertical-align: middle;
+    background: #F0F0F4;
+    border: 1px solid #C0C7D0;
+    color: #39424e;
+    border-radius: 2px;
+    box-shadow: none;
+    transition: none;
+}
+.theme-m-content .CodeMirror {
+    font-size: 13px;
+}
+.mkd-container .CodeMirror {
+    min-height: 100px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.administration-contest-edit .CodeMirror, .administration-challenge-edit .CodeMirror {
+    width: 100%;
+    border: 1px solid #ddd;
+    height: auto;
+}
+.theme-m-content * {
+    font-family: 'OpenSans';
+}
+.CodeMirror {
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+.CodeMirror {
+    font-family: monospace;
+    height: 300px;
+    color: black;
+    direction: ltr;
+}
+.CodeMirror {
+    min-height: 300px;
+    height: auto !important;
+    border: 1px solid #c2c7d0;
+}
+.CodeMirror {
+    box-sizing: border-box;
+    line-height: 1;
+}
+.light-wrap, .CodeMirror {
+    border: 1px solid #c2c7d0;
+    background: #fff;
+}
+.light-wrap, .CodeMirror {
+    border: 1px solid #c2c7d0;
+    background: #fff;
+}
+
+.codeArea{
+    overflow: hidden; 
+    position: relative; 
+    width: 3px; 
+    height: 0px; 
+    top: 4.80002px; 
+    left: 34.8px;
+} */
+
+
     /* .descrip{
         color: #39424e;
         font-weight: 500;

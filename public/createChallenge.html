@@ -43,36 +43,12 @@
             <div class="formgroup">
                 <label for="description" class="chName">Description</label>
                 <div class="profile-input">
-                    <textarea rows="2" id="preview" placeholder="Write a short summary about the challenge"></textarea>
-                    <!-- <small class="descrip">Characters left : 140</small> -->
+                    <textarea rows="2" id="description" placeholder="Write a short summary about the challenge" name="description" required></textarea>
+                    <small id="descrip">Characters left : 140</small>
                      <small class="error description1 span8"></small>
                 </div>
             </div>
-            <div class="formgroup">
-                <label for="problem_statement" class="chName">Problem Statement</label>
-                <div class="profile-input">
-                    <div id="problem_statement-container">
-                        <div class="generic-input-view">
-                            <div class="mkd-container">
-                                <div class="mkd-button-bar">
-                                    <ul class="row">
-                                        <li class="span1" title="Strong">
-                                            <span id="bold"></span>
-                                        </li>
-                                        <li class="span1" title="Emphasis">
-                                            <span id="italics"></span>
-                                        </li>
-                                        <li class="span1 custom" title="numList">
-                                            <span id="numberedList"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <small class="descrip">Characters left : 140</small> -->
-                     <small class="error description1 span8"></small>
-                </div>
+            
             </div>
         </div>
 
@@ -85,5 +61,28 @@
         </div>
     </footer>
     <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const descriptionTextarea = document.getElementById('description');
+    const charCountSmall = document.getElementById('descrip');
+
+    descriptionTextarea.addEventListener('input', function() {
+        let charCount = descriptionTextarea.value.length;
+        if (charCount >= 140) {
+                    // Trim the value to the maximum length
+                    descriptionTextarea.value = descriptionTextarea.value.substring(0, 140);
+                    charCount = 140;
+                }
+        charCount = 140 - charCount;
+        charCountSmall.textContent = `Characters left : ${charCount}`;
+    });
+});
+    </script>
 </body>
 </html>
+
+
+
+
+
+

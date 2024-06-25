@@ -30,6 +30,21 @@
         <div class="initial-text">
             <h2 class="heading">Create Contest</h2>
             <p class="para">Get started by providing the initial details needed to create a contest.</p>
+            <div class="formgroup">
+                <label for="name" class="coName">Contest Name</label>
+                <div class="profile-input">
+                    <input id="name" type="text" class="span12">
+                    <small class="error name span12"></small>
+                </div>
+            </div>
+            <div class="formgroup">
+                <label for="startDate" class="coName">Start Time</label>
+                <div class="profile-input horizontal-group">
+                    <input data-analytics="createsd" id="startDate" type="text" class="date">
+                    <p>at</p>
+                    <input id="starttime" type="text" class="time">
+                </div>
+            </div>
         </div>
     </main>
 </body>

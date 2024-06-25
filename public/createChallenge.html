@@ -6,6 +6,29 @@
     <title>CodeSphere</title>
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="./createChallenge.css">
+    <style>
+        .editable-div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 100px;
+            overflow: auto;
+        }
+        .bottom-bar-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: rgb(19, 158, 19);
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 50px;
+            font-size: medium;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,8 +50,6 @@
         </div>
     </header>
 
-
-
     <main>
         <div class="initial-text">
             <h2 class="heading">Create Challenge</h2>
@@ -45,15 +66,71 @@
                 <div class="profile-input">
                     <textarea rows="2" id="description" placeholder="Write a short summary about the challenge" name="description" required></textarea>
                     <small id="descrip">Characters left : 140</small>
-                     <small class="error description1 span8"></small>
+                    <small class="error description1 span8"></small>
+                </div>
+                <div class="problem-statement">
+                    <label for="problem-statement" class="chName">Problem</label>
+                    <div class="profile-input">
+                        <div class="whole">
+                            <div class="toolbar">
+                                <button id="boldButton">B</button>
+                                <button id="italicButton">I</button>
+                                <button id="numberedListButton">Numbered List</button>
+                            </div>
+                            <div id="myEditableDiv" contenteditable="true" class="editable-div"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-format">
+                    <label for="problem-statement" class="chName">Input Format</label>
+                    <div class="profile-input">
+                        <div class="whole">
+                            <div class="toolbar">
+                                <button id="boldButton">B</button>
+                                <button id="italicButton">I</button>
+                                <button id="numberedListButton">Numbered List</button>
+                            </div>
+                            <div id="myEditableDiv" contenteditable="true" class="editable-div"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="output-format">
+                    <label for="problem-statement" class="chName">Output Format</label>
+                    <div class="profile-input">
+                        <div class="whole">
+                            <div class="toolbar">
+                                <button id="boldButton">B</button>
+                                <button id="italicButton">I</button>
+                                <button id="numberedListButton">Numbered List</button>
+                            </div>
+                            <div id="myEditableDiv" contenteditable="true" class="editable-div"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints">
+                    <label for="problem-statement" class="chName">Constraints</label>
+                    <div class="profile-input">
+                        <div class="whole">
+                            <div class="toolbar">
+                                <button id="boldButton">B</button>
+                                <button id="italicButton">I</button>
+                                <button id="numberedListButton">Numbered List</button>
+                            </div>
+                            <div id="myEditableDiv" contenteditable="true" class="editable-div"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            </div>
         </div>
-
     </main>
 
+    <div class="bottom-bar-wrapper">
+        <div class="bottom-bar">
+            <div class="bottom">
+                <button class="button">Save Changes</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -63,26 +140,32 @@
     <script src="js/scripts.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    const descriptionTextarea = document.getElementById('description');
-    const charCountSmall = document.getElementById('descrip');
+            const descriptionTextarea = document.getElementById('description');
+            const charCountSmall = document.getElementById('descrip');
 
-    descriptionTextarea.addEventListener('input', function() {
-        let charCount = descriptionTextarea.value.length;
-        if (charCount >= 140) {
+            descriptionTextarea.addEventListener('input', function() {
+                let charCount = descriptionTextarea.value.length;
+                if (charCount >= 140) {
                     // Trim the value to the maximum length
                     descriptionTextarea.value = descriptionTextarea.value.substring(0, 140);
                     charCount = 140;
                 }
-        charCount = 140 - charCount;
-        charCountSmall.textContent = `Characters left : ${charCount}`;
-    });
-});
+                charCount = 140 - charCount;
+                charCountSmall.textContent = `Characters left : ${charCount}`;
+            });
+
+            document.getElementById('boldButton').addEventListener('click', function() {
+                document.execCommand('bold');
+            });
+
+            document.getElementById('italicButton').addEventListener('click', function() {
+                document.execCommand('italic');
+            });
+
+            document.getElementById('numberedListButton').addEventListener('click', function() {
+                document.execCommand('insertOrderedList');
+            });
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-

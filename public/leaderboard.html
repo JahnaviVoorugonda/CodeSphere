@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="CodeSphereLogo_processed.png" alt="CodeSphere Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="Practice.html">Practice</a></li>
+                    <li><a href="contests.html">Contests</a></li>
+                    <li><a href="#">Open IDE</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+            </nav>
+            <div class="auth-links">
+                <a href="#">Profile</a>
+                <img src="profile.png" alt="Profile" class="profile-logo">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Leaderboard</h1>
+            <div class="leaderboard-options">
+                <input type="text" id="search-input" placeholder="Search by Username">
+                <select id="filter-dropdown">
+                    <option value="all">All</option>
+                    <option value="top-10">Top 10</option>
+                    <option value="my-rank">My Rank</option>
+                </select>
+            </div>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                        <th>Contests Participated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically added here -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button id="prev-page">Previous</button>
+                <button id="next-page">Next</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CodeSphere. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="leaderboard.js"></script>
+</body>
+</html>

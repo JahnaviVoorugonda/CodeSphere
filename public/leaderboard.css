@@ -1,3 +1,5 @@
+/* CSS for leaderboard page */
+
 body {
     margin: 0;
     padding: 0;
@@ -5,6 +7,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
 }
 
 header {
@@ -52,6 +60,7 @@ header .auth-links {
     float: right;
     margin-top: 15px;
 }
+
 .auth-links {
     display: flex;
     align-items: center;
@@ -71,81 +80,55 @@ header .auth-links a {
     text-decoration: none;
 }
 
-
-.main-content {
+main {
     padding: 20px;
-    flex: 1;
-}
-.heading {
-    padding: 30px 50px 10px; 
-    margin: 0; 
 }
 
-.para {
-    padding: 10px 50px; 
-    margin: 0; 
-    margin-bottom: 20px; 
-}
-
-.formgroup {
-    display: flex;
-    align-items: center;
+h1 {
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.coName {
-    flex-basis: 30%; 
-    margin-right: 20px;
-    text-align: right;
+.search-box {
+    margin-top: -20px; /* Adjust margin to move the search box slightly above */
 }
 
-.profile-input {
-    flex: 1;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.profile-input input {
-    width: 20%;
-    height: 30px;
-    padding: 5px 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+thead {
+    background-color: #003366;
+    color: #ffffff;
 }
 
-.profile-input small.error {
-    display: none;
-    color: red;
-    font-size: 12px;
+th, td {
+    padding: 10px;
+    text-align: left;
 }
 
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    margin-left: 430px;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-.checkbox-group label {
-    margin-left: 10px;
+tfoot {
+    background-color: #003366;
+    color: #ffffff;
 }
 
-.button {
-    padding: 10px 20px;
-    background-color: rgb(19, 158, 19);
-    color: white;
-    border: none;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    height: 50px;
-    font-size: medium;
-    margin-left: 590px;
-    margin-top:80px;
+tfoot td {
+    padding-top: 15px;
 }
+
+tfoot td:first-child {
+    text-align: center;
+}
+
 footer {
     background: #003366;
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    margin-top: auto; 
+    margin-top: auto;
 }

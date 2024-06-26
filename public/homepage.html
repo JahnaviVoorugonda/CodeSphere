@@ -6,6 +6,76 @@
     <title>CodeSphere</title>
     <link rel="stylesheet" href="homepage.css">
 </head>
+<style>
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    float: right;
+}
+
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.profile-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.arrow {
+    font-size: 16px;
+}
+
+.dropdown-content {
+    display: none;
+    position: inherit;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #333;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+body.dark-mode .dropdown-content a {
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: #555;
+}
+
+.show {
+    display: block;
+}
+
+</style>
 <body>
     <header>
         <div class="container">
@@ -15,14 +85,21 @@
                     <li><a href="homepage.html">Home</a></li>
                     <li><a href="Practice.html">Practice</a></li>
                     <li><a href="contests.html">Contests</a></li>
-                    <li><a href="#">Open IDE</a></li>
+                    <li><a href="./indexCompiler.html">Open IDE</a></li>
                     <li><a href="#">Leaderboard</a></li>
                 </ul>
             </nav>
-            <div class="auth-links">
-                <a href="profile.html">Profile</a>
-                <img src="profile.png" alt="Profile" class="profile-logo">
-            </div>
+            <div class="dropdown">
+                <button class="dropdown-button">
+                    <img src="profile.png" alt="Profile" class="profile-logo">
+                    <span class="arrow">&#9660;</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="./profile.html">Profile</a>
+                    <a href="./administration.html">Administration</a>
+                    
+                </div>
+            </div>        
         </div>
     </header>
     <main>
@@ -63,5 +140,32 @@
         </div>
     </footer>
     <script src="js/scripts.js"></script>
+    <script>
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownButton = document.querySelector('.dropdown-button');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    dropdownButton.addEventListener('click', function() {
+        dropdownContent.classList.toggle('show');
+    });
+
+    themeToggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        document.body.classList.toggle('dark-mode');
+    });
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', function(event) {
+        if (!event.target.closest('.dropdown-button')) {
+            if (dropdownContent.classList.contains('show')) {
+                dropdownContent.classList.remove('show');
+            }
+        }
+    });
+});
+
+    </script>
 </body>
 </html>
